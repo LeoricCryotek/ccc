@@ -1,4 +1,5 @@
 from odoo import models, fields
+ # css/models/hr_employee.py
 
 class HrEmployee(models.Model):
     _inherit = 'hr.employee'

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- views/views/my_account_portal_view.xml -->
+
+<odoo>
+    <template id="portal_my_details_fields_remove_company_vat" inherit_id="portal.portal_my_details_fields">
+        <xpath expr="//div[contains(@t-attf-class, 'mb-1') and contains(@t-attf-class, 'col-xl-6')]" position="replace"/>
+        <xpath expr="//div[contains(@t-attf-class, 'mb-1') and contains(@t-attf-class, 'col-xl-6')]" position="replace"/>
+        <xpath expr="//div[@t-if='not partner_can_edit_vat'][contains(@class, 'col-12') and contains(@class, 'd-none')]" position="replace"/>
+        <xpath expr="//div[contains(@t-attf-class, 'mb-3') and label/@for='city']" position="replace"/>
+        <xpath expr="//div[contains(@t-attf-class, 'mb-3') and label/@for='zipcode']" position="replace"/>
+        <xpath expr="//div[contains(@t-attf-class, 'mb-3') and label/@for='country_id']" position="replace"/>
+        <xpath expr="//div[contains(@t-attf-class, 'mb-3') and label/@for='state_id']" position="replace"/>
+    </template>
+</odoo>
