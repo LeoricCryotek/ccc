@@ -11,6 +11,7 @@
         'views/portal_layout.xml',
         'views/my_account_portal_view.xml',
         'views/res_partner_views.xml',
+        'views/munis_res_partner.xml',
     ],
     'installable': True,
     'application': False,
