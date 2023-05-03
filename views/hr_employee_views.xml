@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- ccc/views/hr_employee_view.xml -->
+<!-- views/hr_employee_view.xml -->
 
 <odoo>
     <record id="hr_employee_form_view_inherit" model="ir.ui.view">

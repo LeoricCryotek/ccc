@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- views/portal_layout.xml -->
+
 <odoo>
     <data>
         <template id="portal_layout_remove_security" inherit_id="portal.portal_layout">
