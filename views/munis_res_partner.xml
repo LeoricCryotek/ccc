@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- views/munis_res_partner.xml -->
+
 <odoo>
   <record id="view_res_partner_form_inherit_munis" model="ir.ui.view">
     <field name="name">res.partner.form.inherit.munis</field>
     <field name="model">res.partner</field>
     <field name="inherit_id" ref="base.view_partner_form"/>
     <field name="arch" type="xml">
-      <xpath expr="//group[@name='other_info']" position="after">
-        <group string="Munis">
-          <field name="vendor_id"/>
-        </group>
+      <xpath expr="//notebook" position="inside">
+        <!-- New Tab 1 -->
+        <page name="Munis" string="Munis" attrs="{'invisible': [('is_company', '=', False)]}">
+          <group string="Munis">
+            <field name="munis_vendor_id"/>
+
+          </group>
+        </page>
       </xpath>
     </field>
   </record>
