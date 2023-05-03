@@ -4,5 +4,5 @@ from odoo import models, fields, api
 class ResPartner(models.Model):
     _inherit = 'res.partner'
 
-    favorite_drink = fields.Char(string='Favorite Drink', default='')
+    drink = fields.Char(string='Favorite Drink')
     munis_vendor_id = fields.Integer(string='Vendor ID', help='Munis Vendor ID')

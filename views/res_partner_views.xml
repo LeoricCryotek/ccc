@@ -10,7 +10,7 @@
             <xpath expr="//page[@name='sales_purchases']" position="after">
                 <page string="Information" name="Information">
                     <group>
-                        <field name="favorite_drink"/>
+                        <field name="drink"/>
                     </group>
                 </page>
             </xpath>

@@ -26,7 +26,7 @@
                             <field name="zoom_credit"/>
                         </group>
                         <group>
-                            <field name="favorite_drink"/>
+                            <field name="drink"/>
                         </group>
                     </group>
                 </page>

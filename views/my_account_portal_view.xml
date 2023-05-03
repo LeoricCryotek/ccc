@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- views/my_account_portal_view.xml -->
 <odoo>
-    <template id="portal_my_details_fields_remove_company_vat" inherit_id="portal.portal_my_details_fields">
+    <template id="portal_my_details_fields_add_drink" inherit_id="portal.portal_my_details_fields">
         <xpath expr="//div[contains(@t-attf-class, 'mb-1') and contains(@t-attf-class, 'col-xl-6')]" position="replace"/>
         <xpath expr="//div[contains(@t-attf-class, 'mb-1') and contains(@t-attf-class, 'col-xl-6')]" position="replace"/>
-        <xpath expr="//div[@t-if='not partner_can_edit_vat'][contains(@class, 'col-12') and contains(@class, 'd-none')]" position="replace">
-            <div t-attf-class="mb-3 #{error.get('favorite_drink') and 'o_has_error' or ''} col-xl-6">
-                <label class="col-form-label" for="favorite_drink">Favorite Drink</label>
-                <input type="text" name="favorite_drink" t-attf-class="form-control #{error.get('favorite_drink') and 'is-invalid' or ''}" t-att-value="favorite_drink or partner.favorite_drink"/>
-            </div>
-        </xpath>
         <xpath expr="//div[contains(@t-attf-class, 'mb-3') and label/@for='city']" position="replace"/>
         <xpath expr="//div[contains(@t-attf-class, 'mb-3') and label/@for='zipcode']" position="replace"/>
         <xpath expr="//div[contains(@t-attf-class, 'mb-3') and label/@for='country_id']" position="replace"/>
         <xpath expr="//div[contains(@t-attf-class, 'mb-3') and label/@for='state_id']" position="replace"/>
+        <xpath expr="//div[contains(@t-attf-class, 'mb-3') and label/@for='state_id']" position="after">
+            <div t-attf-class="mb-3 #{error.get('drink') and 'o_has_error' or ''} col-xl-6">
+                <label class="col-form-label" for="drink">Favorite Drink</label>
+                <input type="text" name="drink" t-attf-class="form-control #{error.get('drink') and 'is-invalid' or ''}" t-att-value="drink or partner.drink"/>
+            </div>
+        </xpath>
     </template>
 </odoo>
