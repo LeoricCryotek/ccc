@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- views/helpdesk_timesheet_update.xml -->
+
+<odoo>
+    <record model="ir.ui.view" id="ccc_helpdesk_timesheet_update">
+        <field name="name">ccc.helpdesk.timesheet.update</field>
+        <field name="model">helpdesk.ticket</field>
+        <field name="inherit_id" ref="helpdesk_sale_timesheet.portal_helpdesk_ticket_timesheet"/>
+        <field name="arch" type="xml">
+            <xpath expr="//th[@id='ticket_user_header']" position="after">
+                <th class="text-end">
+                    <t t-esc="'Ticket: #' + (ticket.number or '') + ' ' + (ticket.name or '') + '\nSubmitted By: ' + (ticket.partner_id.name or '') + '\nTable: Date, Technician, Description, Time Spent, Status'"/>
+                </th>
+            </xpath>
+        </field>
+    </record>
+</odoo>
