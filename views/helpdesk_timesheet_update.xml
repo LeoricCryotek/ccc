@@ -2,16 +2,23 @@
 <!-- views/helpdesk_timesheet_update.xml -->
 
 <odoo>
-    <record model="ir.ui.view" id="ccc_helpdesk_timesheet_update">
-        <field name="name">ccc.helpdesk.timesheet.update</field>
-        <field name="model">helpdesk.ticket</field>
-        <field name="inherit_id" ref="helpdesk_sale_timesheet.portal_helpdesk_ticket_timesheet"/>
-        <field name="arch" type="xml">
-            <xpath expr="//th[@id='ticket_user_header']" position="after">
-                <th class="text-end">
-                    <t t-esc="'Ticket: #' + (ticket.number or '') + ' ' + (ticket.name or '') + '\nSubmitted By: ' + (ticket.partner_id.name or '') + '\nTable: Date, Technician, Description, Time Spent, Status'"/>
-                </th>
+    <data>
+        <template id="report_helpdesk_timesheet_ticket" inherit_id="helpdesk_timesheet.report_timesheet_ticket" name="Helpdesk Timesheet Ticket Report">
+           <xpath expr="//h1" position="replace">
+                <h1 class="my-4">
+                    <t t-if="not show_ticket">
+                        <strong>Ticket:</strong> <span>#<span t-esc="doc.id"/> <span t-field="doc.name"/></span>
+                    </t>
+                </h1>
             </xpath>
-        </field>
-    </record>
+            <xpath expr="//h2" position="replace">
+                <h4>
+                    <strong>Submitted By:</strong> <span t-field="doc.partner_id.name"/>
+                </h4>
+                <h4>
+                    <strong>Status:</strong> <span t-field="doc.stage_id.name"/>
+                </h4>
+            </xpath>
+        </template>
+    </data>
 </odoo>
