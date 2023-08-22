@@ -1,10 +1,10 @@
 {
     'name': 'City Custom Configurations',
+    'license': 'LGPL-3',
     'version': '1.0',
     'author': 'Danny Santiago',
     'category': 'Customizations',
-    'license': 'LGPL-3',
-    'summary': 'Customizations for employee forms',
+    'summary': 'Customizations for the city of Lewiston odoo instance. Updates to the employee form, res partner forms and portal view.',
     'depends': ['base', 'hr', 'portal', 'web', 'helpdesk', 'timesheet_grid'],
     'data': [
         'views/hr_employee_views.xml',
@@ -13,6 +13,9 @@
         'views/res_partner_views.xml',
         'views/munis_res_partner.xml',
         'views/helpdesk_timesheet_update.xml',
+        'views/assets.xml',
+        'views/portal_custom_personal_ui.xml',
+        'views/portal_personal_details_view.xml',
     ],
     'installable': True,
     'application': False,

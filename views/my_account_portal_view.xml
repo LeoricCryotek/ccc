@@ -7,12 +7,10 @@
         <xpath expr="//div[contains(@t-attf-class, 'mb-1') and contains(@t-attf-class, 'col-xl-6')]" position="replace"/>
         <xpath expr="//div[contains(@t-attf-class, 'mb-3') and label/@for='zipcode']" position="replace"/>
         <xpath expr="//div[contains(@t-attf-class, 'mb-3') and label/@for='state_id']" position="replace"/>
-        <!-- Add the 'drink' field after the 'email' field -->
-        <!-- <xpath expr="//div[label/@for='phone']" position="after">
-            <div t-attf-class="mb-3 #{error.get('drink') and 'o_has_error' or ''} col-xl-6">
-                <label class="col-form-label" for="drink">Favorite Drink</label>
-                <input type="text" name="drink" t-attf-class="form-control #{error.get('drink') and 'is-invalid' or ''}" t-att-value="drink or partner.drink"/>
-            </div>
-        </xpath> -->
+
+        <!-- Remove the Country section -->
+        <xpath expr="//div[label/@for='country_id']" position="attributes">
+            <attribute name="style">display: none;</attribute>
+        </xpath>
     </template>
 </odoo>

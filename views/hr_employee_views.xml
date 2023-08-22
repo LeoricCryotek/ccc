@@ -24,9 +24,10 @@
                     <group>
                         <group>
                             <field name="zoom_credit"/>
+                            <field name="partner_zoom_ext"/>
                         </group>
                         <group>
-                            <field name="drink"/>
+                            <field name="partner_drink"/>
                         </group>
                     </group>
                 </page>

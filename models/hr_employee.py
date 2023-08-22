@@ -5,7 +5,8 @@ class HrEmployee(models.Model):
     _inherit = 'hr.employee'
 
     zoom_credit = fields.Boolean(string='Zoom Credit')
-    drink = fields.Char(related='address_home_id.drink', string="Favorite Drink", readonly=False)
+    partner_drink = fields.Char(related='user_id.partner_id.drink', string='Drink Preference', readonly=True)
+    partner_zoom_ext = fields.Char(related='user_id.partner_id.zoom_ext', string='Zoom Extension', readonly=True)
     employee_id = fields.Char(string='Employee ID')
     employee_badge_id = fields.Char(string='Badge #')
     physical_key = fields.Char(string='Physical Key')

@@ -11,6 +11,7 @@
                 <page string="Information" name="Information">
                     <group>
                         <field name="drink"/>
+                        <field name="zoom_ext"/>
                     </group>
                 </page>
             </xpath>

@@ -1,0 +1,10 @@
+.custom-success-banner {
+    .custom-success-banner {
+    border: 2px solid darkgreen !important;
+    background-color: lightgreen !important;
+    border-radius: 10px !important;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0;
+    padding: 5px;
+}

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- views/portal_custom_personal_ui.xml -->
+
+<odoo>
+    <template id="custom_portal_breadcrumb" inherit_id="portal.portal_breadcrumbs">
+        <xpath expr="//ol" position="inside">
+            <li class="breadcrumb-item active">Edit Personal Details</li>
+        </xpath>
+    </template>
+
+    <template id="portal_personal_details" name="Portal Personal Details">
+        <t t-call="portal.portal_layout">
+            <t t-set="breadcrumb" t-value="'My Account'"/>
+            <t t-set="title">Personal Details</t>
+            <div id="wrap" class="container">
+
+                <div class="oe_structure">
+
+                    <t t-if="request.httprequest.args.get('show_notification') == 'True'">
+                        <div class="alert alert-success custom-success-banner" role="alert">
+                            Personal Details Saved
+                        </div>
+                    </t>
+
+                    <div class="col-md-6 offset-md-0">
+                        <!-- Your content for the personal details page goes here. For example: -->
+                        <form action="/my/personal/save" method="post">
+                            <div class="form-group">
+                                <label for="drink">Drink Preference:</label>
+                                <input type="text" id="drink" name="res.partner.drink" class="form-control"
+                                       t-att-value="partner.drink"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="zoom_ext">Zoom Extension:</label>
+                                <input type="text" id="zoom_ext" name="res.partner.zoom_ext" class="form-control"
+                                       t-att-value="partner.zoom_ext"/>
+                            </div>
+                            <div class="form-group text-right">
+                                <button type="submit" class="btn btn-primary mt-1 mr-3">Confirm</button>
+                            </div>
+                        </form>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+</odoo>

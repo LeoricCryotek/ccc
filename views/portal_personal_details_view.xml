@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- views/portal_personal_details_view.xml -->
+
+<odoo>
+    <!-- Template for Editing Personal Details -->
+    <template id="portal_personal_edit" name="Edit Personal Details">
+        <t t-call="ccc.portal_personal_details">
+
+        </t>
+    </template>
+</odoo>

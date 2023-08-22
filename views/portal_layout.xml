@@ -4,8 +4,28 @@
 <odoo>
     <data>
         <template id="portal_layout_remove_security" inherit_id="portal.portal_layout">
-            <xpath expr="//div[@class='o_portal_my_security mt-3']" position="replace">
+            <!-- Remove the Edit button from the Details section -->
+            <xpath expr="//div[hasclass('o_portal_my_details')]/h4/a" position="replace">
             </xpath>
+            <!-- Remove the Account Security section -->
+            <xpath expr="//div[hasclass('o_portal_my_security') and hasclass('mt-3')]" position="replace">
+            </xpath>
+            <!-- Add the Personal section -->
+            <xpath expr="//div[hasclass('o_portal_my_details')]" position="after">
+                <div class="o_portal_my_personal mt-3">
+                    <h4>Personal <a role="button" href="/my/portal_personal_details" class="btn btn-sm btn-link"><i class="fa fa-pencil"/> Edit</a></h4>
+                    <hr class="mt-1 mb-0"/>
+                    <div>
+                        <span class="font-weight-bold mr-2">Favorite Drink:</span>
+                        <span t-field="user_id.partner_id.drink"/>
+                        <div>
+                        <span class="font-weight-bold mr-2">Zoom Ext:</span>
+                        <span t-field="user_id.partner_id.zoom_ext"/>
+                    </div>
+                    </div>
+                </div>
+            </xpath>
+
         </template>
     </data>
 </odoo>
